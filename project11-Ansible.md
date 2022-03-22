@@ -37,8 +37,20 @@ ls /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/
 Note: Trigger Jenkins project execution only for /main (master) branch.
 
 Now your setup will look like this:
-![](jenkins-ansible.png)
+![](jenkins_ansible.png)
 
 Deploy an Elastic IP Address and attach it to Jenkins-Ansible EC2 Instance
 
 ### **Step 2*** – Prepare your development environment using Visual Studio Code ###
+Install Visual Studio Code software on your local machine, then connect to your new Github repo
+
+### **BEGIN ANSIBLE DEVELOPMENT** ###
+
+1. In your ansible-config-mgt GitHub repository, create a new branch that will be used for development of a new feature.
+Tip: Give your branches descriptive and comprehensive names, for example, if you use Jira or Trello as a project management tool – include ticket number (e.g. PRJ-145) in the name of your branch and add a topic and a brief description what this branch is about – a bugfix, hotfix, feature, release (e.g. feature/prj-145-lvm)
+
+1. Checkout the newly created feature branch to your local machine and start building your code and directory structure
+1. Create a directory and name it playbooks – it will be used to store all your playbook files.
+1. Create a directory and name it inventory – it will be used to keep your hosts organised.
+1. Within the playbooks folder, create your first playbook, and name it common.yml
+1. Within the inventory folder, create an inventory file (.yml) for each environment (Development, Staging Testing and Production) dev, staging, uat, and prod respectively.
