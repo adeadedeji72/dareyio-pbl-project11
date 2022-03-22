@@ -47,6 +47,7 @@ Install Visual Studio Code software on your local machine, then connect to your 
 ### **BEGIN ANSIBLE DEVELOPMENT** ###
 
 1. In your ansible-config-mgt GitHub repository, create a new branch that will be used for development of a new feature.
+
 Tip: Give your branches descriptive and comprehensive names, for example, if you use Jira or Trello as a project management tool – include ticket number (e.g. PRJ-145) in the name of your branch and add a topic and a brief description what this branch is about – a bugfix, hotfix, feature, release (e.g. feature/prj-145-lvm)
 
 1. Checkout the newly created feature branch to your local machine and start building your code and directory structure
@@ -54,3 +55,8 @@ Tip: Give your branches descriptive and comprehensive names, for example, if you
 1. Create a directory and name it inventory – it will be used to keep your hosts organised.
 1. Within the playbooks folder, create your first playbook, and name it common.yml
 1. Within the inventory folder, create an inventory file (.yml) for each environment (Development, Staging Testing and Production) dev, staging, uat, and prod respectively.
+
+### **Step 4** – Set up an Ansible Inventory ###
+An Ansible inventory file defines the hosts and groups of hosts upon which commands, modules, and tasks in a playbook operate. Since our intention is to execute Linux commands on remote hosts, and ensure that it is the intended configuration on a particular server that occurs. It is important to have a way to organize our hosts in such an Inventory.
+
+Save below inventory structure in the inventory/dev file to start configuring your development servers. Ensure to replace the IP addresses according to your own setup.
