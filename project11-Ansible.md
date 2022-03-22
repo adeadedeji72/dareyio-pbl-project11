@@ -74,6 +74,7 @@ Now, ssh into your Jenkins-Ansible server using ssh-agent
 ~~~
 ssh -A ubuntu@public-ip
 ~~~
+Also notice, that your Load Balancer user is ubuntu and user for RHEL-based servers is ec2-user.
 Update your inventory/dev.yml file with this snippet of code:
 ~~~
 [nfs]
@@ -89,6 +90,5 @@ Update your inventory/dev.yml file with this snippet of code:
 [lb]
 <Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'
 ~~~
-Also notice, that your Load Balancer user is ubuntu and user for RHEL-based servers is ec2-user.
 
-Update your inventory/dev.yml file with this snippet of code:
+
