@@ -198,3 +198,7 @@ You can go to each of the servers and check if wireshark has been installed by r
  
  ![](which-wireshark.jpg)
  
+The updated Ansible architecture now looks like this:
+ 
+ ![](ansible_architecture.png)
+ 
