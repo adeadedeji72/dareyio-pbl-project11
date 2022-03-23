@@ -172,6 +172,7 @@ Once your code changes appear in master branch – Jenkins will do its job and s
 /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/ 
 ~~~
 directory on Jenkins-Ansible server.
+
 **However, you may have to change the ownership of your /mnt directory in the NFS server too nobody:nobody if the have permission denied in the output of your Jenkins 
 build.**
 
@@ -179,3 +180,18 @@ build.**
 sudo chown -R nobody:nobody /mnt
 ~~~
 
+## **RUN FIRST ANSIBLE TEST** ##
+**Step 7** – Run first Ansible test
+Now, it is time to execute ansible-playbook command and verify if your playbook actually works:
+~~~
+ansible-playbook -i /var/lib/jenkins/jobs/ansible/builds/<build-number>/archive/inventory/dev.yml 
+/var/lib/jenkins/jobs/ansible/builds/<build-number>/archive/playbooks/common.yml
+~~~
+
+Note: Previous command we ran without sudo, this is because we had added an ssh key to ssh-agent for our regular user. If you try to run this command with sudo you will have to explicitly pass the ssh key with --private-key <path-to-private-key> parameter.
+
+You can go to each of the servers and check if wireshark has been installed by running 
+ ~~~
+ which wireshark or 
+ wireshark --version
+~~~
