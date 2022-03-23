@@ -172,4 +172,10 @@ Once your code changes appear in master branch – Jenkins will do its job and s
 /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/ 
 ~~~
 directory on Jenkins-Ansible server.
+**However, you may have to change the ownership of your /mnt directory in the NFS server too nobody:nobody if the have permission denied in the output of your Jenkins 
+build.**
+
+~~~
+sudo chown -R nobody:nobody /mnt
+~~~
 
