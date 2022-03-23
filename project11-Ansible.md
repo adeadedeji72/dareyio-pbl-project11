@@ -66,6 +66,12 @@ Save below inventory structure in the inventory/dev file to start configuring yo
 eval `ssh-agent -s`
 ssh-add <path-to-private-key>
 ~~~
+
+If you are on a Windows machine, activate the **ssh-agent** service in *Windows Services* then run
+~~~
+ssh-agent
+ssh-add <key file>
+~~~
 Confirm the key has been added with the command below, you should see the name of your key
 ~~~
 ssh-add -l
@@ -90,5 +96,12 @@ Update your inventory/dev.yml file with this snippet of code:
 [lb]
 <Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'
 ~~~
+
+## **CREATE A COMMON PLAYBOOK** ##
+### **Step 5**  – Create a Common Playbook ###
+It is time to start giving Ansible the instructions on what you needs to be performed on all servers listed in inventory/dev.
+
+In common.yml playbook you will write configuration for repeatable, re-usable, and multi-machine tasks that is common to systems within the infrastructure.
+
 
 
